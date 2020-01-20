@@ -25,6 +25,14 @@ botaoClicado.addEventListener("click", () => {
     // })
 
 
+
+
+
+})
+//***COMO SERIA SEM USAR O THEN */
+botaoClicado.addEventListener("click", async() => {
+    let listaNoticias = (await fetch("https://newsapi.org/v2/top-headlines?country=br&apiKey=e5b12e8351004b1fb606eb4250a4d10f")).json();
+    console.log(listaNoticias);
 })
 
 //Vai mostrar uma lista de noticias.
@@ -42,9 +50,9 @@ let mostrarNaTela = listaNoticias => {
             <p class="card-text">${noticia.description}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-    </div>` 
-    board.innerHTML += card;
+    </div>`
+        board.innerHTML += card;
     })
-     
-   
+
+
 }
